@@ -66,7 +66,8 @@ public class SecondVideoFragment extends Fragment implements SurfaceHolder.Callb
                 return true;
             }
         });
-        contentUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/DCIM" + "/Camera" + "/test1.mp4"));
+        //contentUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/DCIM" + "/Camera" + "/test1.mp4"));
+        contentUri = Uri.parse( "android.resource://" + getActivity().getPackageName() + "/" + R.raw.test2);
         builder = (SecondVideoRendererBuilder) getRendererBuilder();
         videoSurfaceView = (VideoSurfaceView) view.findViewById(R.id.second_video);
         mediaController = new MediaController(getActivity());

@@ -66,7 +66,8 @@ public class FirstVideoFragment extends Fragment implements SurfaceHolder.Callba
                 return true;
             }
         });
-        contentUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/DCIM" + "/Camera" + "/test2.mp4"));
+        //contentUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/DCIM" + "/Camera" + "/test2.mp4"));
+        contentUri = Uri.parse( "android.resource://" + getActivity().getPackageName() + "/" + R.raw.test1);
         builder = (FirstVideoRendererBuilder) getRendererBuilder();
         videoSurfaceView = (VideoSurfaceView) view.findViewById(R.id.first_video);
         mediaController = new MediaController(getActivity());
